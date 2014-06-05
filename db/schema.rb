@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140605163753) do
     t.string   "uid"
     t.text     "picture"
     t.string   "name"
+    t.string   "bookmark_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
