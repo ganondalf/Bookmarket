@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users
+  get '/getting_started' => 'welcome#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

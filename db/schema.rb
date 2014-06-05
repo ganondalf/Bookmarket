@@ -32,7 +32,8 @@ ActiveRecord::Schema.define(version: 20140605201122) do
   create_table "links", force: true do |t|
     t.string   "title"
     t.string   "url"
-    t.integer  "collection_id"
+    t.text     "picture"
+    t.integer  "library_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140605201122) do
   create_table "notes", force: true do |t|
     t.text     "body"
     t.integer  "user_id"
-    t.integer  "library_id"
+    t.integer  "link_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
