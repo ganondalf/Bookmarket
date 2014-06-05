@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user = User.find(1)
-library = Library.create(name: 'Cool NYTimes', description: 'My favorite NYTimes articles' user_id: )
-user << library
+library = Library.create(title: 'Cool NYTimes', description: 'My favorite NYTimes articles')
+user.libraries << library
 
 Link.create(title: 'G.M. Says Inquiry Found "Pattern of Incompetence"', url:'http://www.nytimes.com/2014/06/06/business/gm-ignition-switch-internal-recall-investigation-report.html?hp&_r=0', library_id: 1, picture: 'http://kepler.nasa.gov/images/mws/NYtimesIcon2.jpg')
 
