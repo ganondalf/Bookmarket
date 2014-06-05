@@ -16,7 +16,7 @@
           <li><%= link_to "Create Account", new_user_registration_path %></li>
           <li><%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %></li>
               <% else %>
-          <li><%= current_user.email %></li>
+          <li><%=link_to "Hello #{current_user.email}", user_path(@user) %> </li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
               <% end %>
       </ul>

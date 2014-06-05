@@ -3,12 +3,12 @@
 
 }
 .navbar-default .navbar-brand {
-  color: red;
+  color: grey;
   font-size: 30px;
 }
 .navbar-default .navbar-nav>li>a {
-  font-size: 16px;
-  color: black;
+  /*font-size: 16px;
+  color: black;*/
 }
 
 .navbar-default .navbar-nav>li {
@@ -19,6 +19,8 @@
 }
 
 .navbar-default .navbar-nav ul li{
+  font-size: 16px;
+  color: black;
   text-align: right;
   display: inline;
   float: left;
