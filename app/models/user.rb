@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
   has_many :notes, dependent: :destroy
   has_many :links, through: :notes
 
- devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,     :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
+  validates :name, :uniqueness => {:case_sensitive => false}
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,     :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
 
  def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)

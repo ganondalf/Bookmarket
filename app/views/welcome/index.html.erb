@@ -1,16 +1,12 @@
-<div class='container-fluid'>
-  <div class='row-fluid'>
-    <div class='span12 recentLinks'>
-      <% @links.order("created_at DESC limit 20").each do |link| %>
-        <div class='span4 thumbnail'>
-          <a href="<%=link.url %>"><%=link.title %><img data-src="<%= link.picture %>/300x200" alt="<%= link.title %>"></a>
-          <div class="caption">
-            <h3><%= link.title.capitalize %></h3>
-            <p><%= link.annotations.first %></p>
-          </div>
-      <% end %>
-    </div>
-    <div class='span12 topLibraries'>
-    </div>
+<div class='container'>
+  <div class='row'>
+    <h2>Recently Added Links</h2>
+      <%= render 'recent_links' %>
   </div>
+  <div class='row'>
+    <h2>Most Popular Libraries</h2>
+      <%= render 'popular_libraries' %>
+  </div>
+
 </div>
+

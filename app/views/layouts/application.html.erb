@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>BookmarketApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand " href="#">BookMarket</a>
+      <a class="navbar-brand " href="/">BookMarket</a>
     </div>
     <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav login">
@@ -24,9 +24,12 @@
           <li><%= link_to "Log In", new_user_session_path %></li>
           <li><%= link_to "Create Account", new_user_registration_path %></li>
           <li><%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %></li>
+          <li><%= link_to "Browse Libraries", library_path %></li>
               <% else %>
           <li><%=link_to "Hello #{current_user.name}", user_path(@user) %> </li>
-          <li><%= link_to "Getting Started", getting_started_path %></li>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Browse Libraries", libraries_path %></li>
+          <li><%= link_to "My Profile", user_path(@user) %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
               <% end %>
       </ul>

@@ -25,3 +25,22 @@
   display: inline;
   float: left;
 }
+
+.recentLinksSection, .popularLibrarySection {
+  height: 250px;
+  overflow: scroll;
+}
+.recentLinks {
+  border: 1px solid black;
+  height: 250px;
+  padding: 8px;
+  overflow: scroll;
+}
+.recentLinks img{
+  margin-top: 10px;
+}
+
+.recentLinks p{
+  padding: 10px 5px 0 5px;
+  font-size: 16px;
+}
