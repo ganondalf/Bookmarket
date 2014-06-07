@@ -1,1 +1,47 @@
-show.html.erb
+<div class="container">
+  <div class="row profileSection">
+
+    <div class='col-md-3'>
+      <div class='row'>
+        <div class='col-md-12'>
+          <h6><%= @user.name %></h6>
+          <img src='<%= @user.picture %>'>
+            <ul>
+              <li><%= link_to "My Libraries", user_libraries_path(@user) %></li>
+              <li><%= link_to "Edit Account", edit_user_path(@user) %></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-9'>
+      <h3>My Top Libraries</h3>
+        <div class='row userTopLibraries'>
+          <% @user.libraries.each do |library| %>
+          <a href="users/<%= @user.id %>/libraries/<%= library.id %>">
+            <div class='col-md-3'>
+              <h4>Title: <%= library.title.capitalize %></h4>
+              <p>Number of Links: <%= library.links.size %></p>
+            </div></a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+<%# Library.select("private, false") do |library| %>
+                <%#= library.title %>
+
+
+
+
+

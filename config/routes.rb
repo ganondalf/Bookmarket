@@ -9,11 +9,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users do
-      resources :libraries, only: [:show, :edit, :delete, :update]
+      resources :libraries
   end
 
-  resources :libraries, only: [:index]
-
+  get '/public_libraries' => 'libraries#show_public_libraries'
   get '/about' => 'welcome#show'
 
   # Example of regular route:

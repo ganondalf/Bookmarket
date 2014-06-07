@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
     @user = current_user
     @links = Link.all
-    @libraries = Library.all
+    @libraries = Library.where("private" => false)
   end
 
   def show
