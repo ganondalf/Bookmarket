@@ -16,7 +16,7 @@
       <div class='row'>
         <div class='col-md-12'>
           <% link.notes.each do |note| %>
-            <p><%= note.user.first_name %> says:</br> <%= note.body %></p>
+            <p><%= note.user.last_name unless note.user == nil  %> says:</br> <%= note.body %></p>
           <% end %>
         </div>
       </div>

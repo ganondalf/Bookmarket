@@ -26,11 +26,11 @@
   float: left;
 }
 
-.recentLinksSection, .popularLibrarySection {
+.recentLinksSection, .popularLibrariesSection {
   height: 250px;
   overflow: scroll;
 }
-.recentLinks {
+.recentLinks, .popularLibraries {
   border: 1px solid black;
   height: 250px;
   padding: 8px;

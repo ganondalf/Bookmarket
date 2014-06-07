@@ -1,15 +1,17 @@
-<div class="row popularLibrarySection">
+<div class="row popularLibrariesSection">
     <% @libraries.each do |library| %>
-    <a href='/libraries/<%= library.id %>'><div class='col-md-4 recentLinks'>
-      <div class='row'>
-        <div class='col-md-12'>
-          <h4>Title: <%= library.title.capitalize %></h4>
-          <p>Number of Links: <%= library.links.size %></p>
+    <div class='col-md-4 popularLibraries'>
+        <div class='row'>
+          <div class='col-md-12'>
+            <a href='/libraries/<%= library.id %>'>
+            <h4>Title: <%= library.title.capitalize %></h4></a>
+            <h6>Description: <%= library.description %></h6>
+            <p> Number of Links: <%= library.links.size %></p>
+          </div>
         </div>
       </div>
-    </a>
     <% end %>
-</div>
+  </div>
 
 <%# poplibs = @libraries.find_by_sql("SELECT library_id AS libs, COUNT(user_id) AS num_users FROM libraries_users GROUP BY library_id ORDER BY num_users DESC") %>
 <!-- returns an array of ActiveRecord objects that meet the criteria set above -->
