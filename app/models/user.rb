@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :notes, dependent: :destroy
   has_many :links, through: :notes
 
-  validates :name, :uniqueness => {:case_sensitive => false}
+  validates :email, :uniqueness => {:case_sensitive => false}
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,     :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
 
@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
       where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.name = auth.info.name
+        user.first_name = auth.info.first_name
+        user.last_name = auth.info.last_name
         user.email = auth.info.email
         user.picture = auth.info.picture
         user.bookmark_token = (0...50).map { ('a'..'z').to_a[rand(26)] }.join
