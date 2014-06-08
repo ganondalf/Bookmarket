@@ -1,41 +1,54 @@
 <div class="container">
-  <div class="row profileSection">
+  <div class="row">
 
-    <div class='col-md-3'>
-      <div class='row'>
-        <div class='col-md-12'>
-          <h6><%= @user.first_name %></h6>
-          <img src='<%= @user.picture %>'>
-            <ul>
-              <li><%= link_to "My Libraries", user_libraries_path(@user) %></li>
-              <li><%= link_to "Edit Account", edit_user_path(@user) %></li>
-            </ul>
+        <div class='col-md-3'>
+          <div class='row row profileSection'>
+            <div class='col-md-12'>
+              <h6><%= @user.first_name %></h6>
+              <img src='<%= @user.picture %>'>
+                <ul>
+                  <li><%= link_to "My Libraries", user_libraries_path(@user) %></li>
+                  <li><%= link_to "Edit Account", edit_user_path(@user) %></li>
+                </ul>
+                <div class='row'>
+                  <h5>Recently Added Links</h5>
+                  <% @user.links.order("created_at DESC ").each do |link| %>
+                  <div class='col-md-12 userRecentLinks' id='userLink<%= link.id %>'>
+                    <div class='row'>
+                      <div class='col-md-3'>
+                        <a href="<%= link.url %>"><img src="<%= link.picture %>" width="60px" height='60px'></a>
+                      </div>
+                        <div class='col-md-9'>
+                          <h6><%= link.title.capitalize %></h6>
+                        </div>
+                      </div>
+                  </div>
+                  <% end %>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class='row'>
-      <div class='col-md-9'>
-      <h3>My Top Libraries</h3>
-        <div class='row userTopLibraries'>
+
+
+      <div class='col-md-8 col-md-offset-1'>
+        <h3>My Top Libraries</h3>
+        <div class='row'>
           <% @user.libraries.each do |library| %>
           <a href="users/<%= @user.id %>/libraries/<%= library.id %>">
-            <div class='col-md-3'>
+            <div class='col-md-4 userTopLibraries'>
               <h4>Title: <%= library.title.capitalize %></h4>
+              <p>Description: <%= library.description %></p>
               <p>Number of Links: <%= library.links.size %></p>
             </div></a>
           <% end %>
         </div>
       </div>
-    </div>
-
 
   </div>
 </div>
 
 
 
-
-</div>
 
 
 <%# Library.select("private, false") do |library| %>

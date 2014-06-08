@@ -30,7 +30,7 @@
   height: 250px;
   overflow: scroll;
 }
-.recentLinks, .popularLibraries {
+.recentLinks, .popularLibraries, .userTopLibraries {
   border: 1px solid black;
   height: 250px;
   padding: 8px;
@@ -44,3 +44,9 @@
   padding: 10px 5px 0 5px;
   font-size: 16px;
 }
+
+.userTopLibraries, .userRecentLinks {
+  border: 1px solid black;
+  overflow: scroll;
+}
+
