@@ -1,26 +1,27 @@
-<div class="row recentLinksSection">
-    <% @links.order("created_at DESC limit 20").each do |link| %>
-    <div class='col-md-4 recentLinks'>
-      <div class='row'>
-        <div class='col-md-12'>
-          <div class='row'>
-              <div class='col-md-3'>
-                  <a href="<%=link.url %>"><img src="<%= link.picture %>" width="60px" height='60px'></a>
-              </div>
-              <div class='col-md-9'>
-                <h3><%= link.title.capitalize %></h3>
-              </div>
+
+  <% @links.order("created_at DESC limit 20").each do |link| %>
+  <div class='col-md-4 recentLinks squareBox'>
+    <div class='row'>
+      <div class='col-md-12'>
+        <div class='row'>
+            <div class='col-md-4'>
+                <a href="<%=link.url %>"><img src="<%= link.picture %>" width="100px" height='100px'></a>
             </div>
-        </div>
-      </div>
-      <div class='row linkNotes'>
-        <div class='col-md-12'>
-          <h4> Notes from Users: </h4>
-          <% link.notes.each do |note| %>
-            <p><a href='users/<%=note.user.id %>'><%= note.user.initials %></a>: "<%= note.body %>"</p>
-          <% end %>
-        </div>
+            <div class='col-md-8'>
+              <h6>From: <%= link.source %>
+              <h4>"<%= link.title %>"</h4>
+            </div>
+          </div>
       </div>
     </div>
-    <% end %>
-</div>
+    <div class='row linkNotes'>
+      <div class='col-md-12'>
+        <h5> What people are saying: </h5>
+        <% link.notes.each do |note| %>
+          <p><a href='users/<%=note.user.id %>'><%= note.user.initials %></a>: "<%= note.body %>"</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+

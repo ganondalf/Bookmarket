@@ -1,6 +1,7 @@
 body {
   font-family: Trebuchet MS, Helvetica, sans-serif;
   color: black;
+  background-color: #3B5998;
 }
 
 a {
@@ -14,44 +15,53 @@ a:focus, a:hover {
 }
 
 .navbar {
-  background-color: white;
+  background-color: #FFD500;
 
 }
 .navbar-default .navbar-brand {
-  color: grey;
+  color: black;
   font-size: 30px;
 }
 .navbar-default .navbar-nav>li>a {
-  /*font-size: 16px;
-  color: black;*/
+  font-size: 16px;
+  color: black;
 }
 
 .navbar-default .navbar-nav>li {
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+  color: #4EB1BA;
 
 }
 
 .navbar-default .navbar-nav ul li{
   font-size: 16px;
-  color: black;
+  color: white;
   text-align: right;
   display: inline;
   float: left;
 }
 
-.recentLinksSection, .popularLibrariesSection {
+.longSection {
   height: 250px;
   overflow: scroll;
+  box-shadow: 10px 10px 5px #77BA98;
+  border-radius: 10px;
 }
-.recentLinks, .popularLibraries, .userTopLibraries, .publicLibraries, .userRecentLinks {
+.squareBox, .userTopLibraries, .publicLibraries, .userRecentLinks {
   border: 1px solid black;
+  border-radius: 10px;
   height: 250px;
   padding: 10px;
+  background-color: #639BF1;
   overflow: scroll;
-
 }
+
+.squareBox h4{
+  margin-top: 20%;
+}
+
 .recentLinks img{
   margin-top: 10px;
   margin-bottom: 15px;

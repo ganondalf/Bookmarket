@@ -19,11 +19,14 @@ class LinksController < ApplicationController
 
   def create_remotely
     user = User.find_by(bookmark_token: params[:bookmark_token])
+    webSource = Link.clean_source(params[:linkWebSource])
+    link= Link.clean_title(params[:linkTitle])
 
     @link = Link.create({
       url: params[:linkUrl],
-      title: params[:linkTitle],
-      picture: params[:picture]
+      picture: params[:picture],
+      title: title,
+      websource: webSource
       })
     @note = user.notes.create({
       body: params[:linkNote]

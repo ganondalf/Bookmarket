@@ -30,11 +30,11 @@
         </div>
 
 
-      <div class='col-md-8 col-md-offset-1'>
+      <div class='col-md-8 col-md-offset-1 longSection'>
         <h3>My Top Libraries</h3>
         <div class='row'>
           <% @user.libraries.each do |library| %>
-            <div class='col-md-4 userTopLibraries' id='<%= library.id %>'>
+            <div class='col-md-4 squareBox' id='<%= library.id %>'>
               <a href="users/<%= @user.id %>/libraries/<%= library.id %>">
               <h4><%= library.title %></h4>
               <p>"<%= library.description %>"</p>
