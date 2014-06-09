@@ -27,7 +27,7 @@ class LinksController < ApplicationController
     @note = user.notes.create({
       body: params[:linkNote]
       })
-    @note.link = @link
+    @link.notes << @note
     render json: { title: @link.title, url: @link.url, note: @note.body }
   end
 
