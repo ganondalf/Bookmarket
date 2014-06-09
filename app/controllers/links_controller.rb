@@ -23,6 +23,7 @@ class LinksController < ApplicationController
     @link = Link.create({
       url: params[:linkUrl],
       title: params[:linkTitle]
+      picture: params[:picture]
       })
     @note = user.notes.create({
       body: params[:linkNote]

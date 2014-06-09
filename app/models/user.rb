@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
         user.last_name = auth.info.last_name
         user.email = auth.info.email
         user.picture = auth.info.picture
-        user.bookmark_token = auth.info.picture
+        user.bookmark_token = User.bookmark_token
       end
     end
   end
