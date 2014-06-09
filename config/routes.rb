@@ -15,6 +15,8 @@ put '/libraries/:id' => 'libraries#update'
 
   get '/public_libraries' => 'libraries#show_public_libraries'
   get '/about' => 'welcome#show'
+  post '/importlinks' => 'links#create_remotely'
+  get '/bookmarklets/:id' =>'links#userbookmark'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

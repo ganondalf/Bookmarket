@@ -14,7 +14,8 @@ class LibrariesController < ApplicationController
 
 
   def show_public_libraries
-    @libraries = Library.select("private, false")
+    @libraries = Library.where("private" => false)
+    @user = current_user
   end
 
 end

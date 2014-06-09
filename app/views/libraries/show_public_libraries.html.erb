@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="row allPublicLibraries">
+      <% @libraries.each do |library| %>
+        <div class='col-md-3 publicLibraries'>
+            <div class='row'>
+              <a href='/libraries/<%= library.id %>'>
+              <div class='col-md-12'>
+                <h4><%= library.title.capitalize %>
+                <p>"<%= library.description %>"</p>
+                <p> Number of Links: <%= library.links.size %></p>
+              </div></a>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

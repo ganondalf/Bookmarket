@@ -1,9 +1,24 @@
+body {
+  font-family: Trebuchet MS, Helvetica, sans-serif;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
 .navbar {
   background-color: white;
 
 }
 .navbar-default .navbar-brand {
-  color: greygi;
+  color: grey;
   font-size: 30px;
 }
 .navbar-default .navbar-nav>li>a {
@@ -30,23 +45,69 @@
   height: 250px;
   overflow: scroll;
 }
-.recentLinks, .popularLibraries, .userTopLibraries {
+.recentLinks, .popularLibraries, .userTopLibraries, .publicLibraries, .userRecentLinks {
   border: 1px solid black;
   height: 250px;
-  padding: 8px;
+  padding: 10px;
   overflow: scroll;
+
 }
 .recentLinks img{
   margin-top: 10px;
 }
 
-.recentLinks p{
-  padding: 10px 5px 0 5px;
+.recentLinks img{
+  margin-bottom: 15px;
+}
+
+.linkNotes {
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+.linkNotes p{
+  font-size: 14px;
+  text-align: left;
+  line-height: 4px;
+  padding: 3px;
+}
+
+.popularLibraries {
+  margin: 0 auto;
+}
+
+.profileSection img {
+  height: 180px;
+  margin: 0 auto;
+}
+
+.profileSection h5 {
+  padding-top: 20px;
+  font-size: 23px;
+  text-align: center;
+}
+.profileSection ul li a {
+  list-style-type: none;
+  font-size: 16px;
+  color: black;
+}
+
+.profileSection .userRecentLinks img {
+  height: 60px;
+  height: 60px;
+}
+
+.userRecentLinks {
+  height: auto;
+}
+
+.userRecentLinks,  p{
+  padding: 10px;
   font-size: 16px;
 }
 
-.userTopLibraries, .userRecentLinks {
-  border: 1px solid black;
-  overflow: scroll;
+.userTopLibraries h4, p{
+  padding: 8px;
+  text-decoration: none;
 }
 

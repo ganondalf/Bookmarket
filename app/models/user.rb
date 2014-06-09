@@ -27,5 +27,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def initials
+    first_letter= self.first_name[0].upcase
+    second_letter=self.last_name[0].upcase
+    return first_letter + second_letter
+  end
+
 
 end

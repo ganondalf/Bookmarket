@@ -2,9 +2,9 @@
   <div class="row">
 
         <div class='col-md-3'>
-          <div class='row profileSection'>
-            <div class='col-md-12'>
-              <h6><%= @user.first_name %></h6>
+          <div class='row '>
+            <div class='col-md-12 profileSection'>
+              <h4>Hello, <%= @user.first_name %>!</h4>
               <img src='<%= @user.picture %>'>
                 <ul>
                   <li><%= link_to "My Libraries", user_libraries_path(@user) %></li>
@@ -19,7 +19,7 @@
                         <a href="<%= link.url %>"><img src="<%= link.picture %>" width="60px" height='60px'></a>
                       </div>
                         <div class='col-md-9'>
-                          <h6><%= link.title.capitalize %></h6>
+                          <p><%= link.title.capitalize %></p>
                         </div>
                       </div>
                   </div>
@@ -36,8 +36,8 @@
           <% @user.libraries.each do |library| %>
             <div class='col-md-4 userTopLibraries' id='<%= library.id %>'>
               <a href="users/<%= @user.id %>/libraries/<%= library.id %>">
-              <h4>Title: <%= library.title.capitalize %></h4>
-              <p>Description: <%= library.description %></p>
+              <h4><%= library.title %></h4>
+              <p>"<%= library.description %>"</p>
               <p>Number of Links: <%= library.links.size %></p></a>
               <div id='responseMessage'></div>
             </div>
