@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
         user.last_name = auth.info.last_name
         user.email = auth.info.email
         user.picture = auth.info.picture
-        user.bookmark_token = (0...50).map { ('a'..'z').to_a[rand(26)] }.join
+        user.bookmark_token = auth.info.picture
       end
     end
   end
@@ -31,6 +31,10 @@ class User < ActiveRecord::Base
     first_letter= self.first_name[0].upcase
     second_letter=self.last_name[0].upcase
     return first_letter + second_letter
+  end
+
+  def self.bookmark_token
+    return (0...50).map { ('a'..'z').to_a[rand(26)] }.join
   end
 
 
