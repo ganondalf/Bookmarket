@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token
   before_action :enable_cross_origin_requests
 
   def index
@@ -20,7 +20,7 @@ class LinksController < ApplicationController
   def create_remotely
     user = User.find_by(bookmark_token: params[:bookmark_token])
     # webSource = Link.clean_source(params[:linkWebSource])
-    link= Link.clean_title(params[:linkTitle])
+    title = Link.clean_title(params[:linkTitle])
 
     @link = Link.create({
       url: params[:linkUrl],
@@ -46,7 +46,6 @@ class LinksController < ApplicationController
   def enable_cross_origin_requests
     response.headers["Access-Control-Allow-Origin"] = "*"
     response.headers["Access-Control-Request-Method"] = "POST"
-
   end
 
   def link_params
