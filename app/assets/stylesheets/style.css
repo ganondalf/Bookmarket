@@ -54,9 +54,6 @@ a:focus, a:hover {
 }
 .recentLinks img{
   margin-top: 10px;
-}
-
-.recentLinks img{
   margin-bottom: 15px;
 }
 
@@ -68,8 +65,7 @@ a:focus, a:hover {
 .linkNotes p{
   font-size: 14px;
   text-align: left;
-  line-height: 4px;
-  padding: 3px;
+  padding: 0 3px 0 0 ;
 }
 
 .popularLibraries {
