@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users do
-      resources :libraries
+      resources :libraries, except: [:update]
   end
+put '/libraries/:id' => 'libraries#update'
 
   get '/public_libraries' => 'libraries#show_public_libraries'
   get '/about' => 'welcome#show'
