@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :users do
       resources :libraries, except: [:update]
   end
-put '/libraries/:id' => 'libraries#update'
+  put '/libraries/:id' => 'libraries#update'
+  resources :links
 
   get '/public_libraries' => 'libraries#show_public_libraries'
   get '/about' => 'welcome#show'
