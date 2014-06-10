@@ -4,7 +4,7 @@ body {
   background-color: #CFF8FF;
 }
 
-.container h2 {
+.container h2, h1 {
   font-family: 'Oswald', sans-serif;
   text-align: center;
 }
@@ -39,7 +39,7 @@ a:focus, a:hover {
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
-  color: #4EB1BA;
+  color: white;
 
 }
 
@@ -137,6 +137,7 @@ a:focus, a:hover {
   padding-top: 20px;
   font-size: 23px;
   text-align: center;
+  font-family: Oswald, sans-serif;
 }
 .profileSection ul {
   list-style-type: none;

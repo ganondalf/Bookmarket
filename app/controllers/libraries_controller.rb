@@ -1,5 +1,13 @@
 class LibrariesController < ApplicationController
 
+  def create
+    library = Library.create(lib_params)
+    user= User.find(params[:user_id])
+    user.libraries << library
+    redirect_to "/"
+  end
+
+
   def update_link
     library = Library.find(params[:libraryId])
     link = Link.find(params[:linkId])
@@ -28,9 +36,18 @@ class LibrariesController < ApplicationController
     @library = Library.find(params[:id])
   end
 
-  def show_public_libraries
+  def index_public_libraries
     @libraries = Library.where("private" => false)
     @user = current_user
+  end
+
+  def show_public_library
+    @library = Library.find(params[:id])
+  end
+
+  private
+  def lib_params
+    params.require(:library).permit(:title, :description, :private)
   end
 
 end

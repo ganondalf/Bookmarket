@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   put '/libraries/:id' => 'libraries#update_user'
   resources :links
 
-  get '/public_libraries' => 'libraries#show_public_libraries'
+  get '/public_libraries/:id' => 'libraries#show_public_library'
+  get '/public_libraries' => 'libraries#index_public_libraries'
   get '/about' => 'welcome#show'
   post '/importlinks' => 'links#create_remotely'
 

@@ -56,6 +56,7 @@
               <%= f.text_field :description, :size => 40 %></br>
               <%= f.label :private %>
               <%= f.check_box :private, {:checked => false } %></br>
+              <%= f.hidden_field :userId, :value => @user.id %>
               <%= f.submit %>
               <% end %>
           </div>
