@@ -23,6 +23,10 @@ class LibrariesController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(current_user.id)
+    @library = Library.find(params[:id])
+  end
 
   def show_public_libraries
     @libraries = Library.where("private" => false)

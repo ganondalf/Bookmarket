@@ -104,8 +104,9 @@ a:focus, a:hover {
   font-size: 23px;
   text-align: center;
 }
-.profileSection ul li a {
+.profileSection ul {
   list-style-type: none;
+  text-decoration: none;
   font-size: 16px;
   color: black;
 }
@@ -129,8 +130,7 @@ a:focus, a:hover {
   width: 50px;
 }
 
-.userTopLibraries h4, p{
-  padding: 8px;
-  text-decoration: none;
+.userLibraries h3 {
+  text-align: center;
 }
 

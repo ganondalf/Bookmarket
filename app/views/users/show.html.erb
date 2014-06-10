@@ -33,19 +33,32 @@
 
 
       <div class='col-md-9 col-md-offset-1 longSection userLibraries'>
-        <div id='quickAdd'>
           <h3>Quick Add Links</h3>
-          <%= form_for(@link,  url: links_path) do |f| %>
-          <%= f.label :title %>
-          <%= f.text_field :title %>
-          <%= f.label :url %>
-          <%= f.text_field :url %>
-            <%= fields_for @note do |n| %>
-            <%= n.label :body %>
-            <%= n.text_field :body %>
+        <div class='row'>
+          <div class="col-md-5 col-md-offset-1">
+            <%= form_for(@link, :html => { :class => "userForms"}, :url => links_path) do |f| %>
+            <%= f.label :title %>
+            <%= f.text_field :title, :size => 40 %></br>
+            <%= f.label :url %>
+            <%= f.text_field :url, :size => 40 %></br>
+              <%= fields_for @note do |n| %>
+              <%= n.label :note %>
+              <%= n.text_field :body, :size => 40 %></br>
+              <% end %>
+            <%= f.submit %>
             <% end %>
-          <%= f.submit %>
-          <% end %>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+            <%= form_for(@library, :html => { :class => "userForms"}, :url => user_libraries_path(@user)) do |f| %>
+              <%= f.label :title %>
+              <%= f.text_field :title, :size => 40 %></br>
+              <%= f.label :description %>
+              <%= f.text_field :description, :size => 40 %></br>
+              <%= f.label :private %>
+              <%= f.check_box :private, {:checked => false } %></br>
+              <%= f.submit %>
+              <% end %>
+          </div>
         </div>
         <h3>My Top Libraries</h3>
         <div class='row'>

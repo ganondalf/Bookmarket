@@ -9,7 +9,6 @@ var todoApp = {
       type: 'PUT',
       dataType: 'json',
       url: 'libraries/' + libraryId,
-      context: this,
       data: {
         libraryId: libraryId
       },
@@ -17,8 +16,9 @@ var todoApp = {
       if(message.message == "Please log in or create an account."){
         alert(message)
       }else{
-        this.remove();
-        $('.responseDiv').text(message.message);
+        this.find('button').remove();
+        var response = $('<div>').text(message.message);
+        this.append(response);
       }
     })
   },

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = current_user
     @link = Link.new
     @note = Note.new
+    @library = Library.new
   end
 
   def update
