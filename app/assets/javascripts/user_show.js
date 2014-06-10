@@ -10,18 +10,20 @@ $(document).ready(function(){
       drop: function( event, ui ) {
         var libraryId = $( this ).attr('id')
         var linkId =  ui.draggable.attr('id')
-
+        var dragBox = ui.draggable
         $.ajax({
           type: 'PUT',
           url: '/libraries/' + libraryId + '/link',
           dataType: 'JSON',
+          context: this,
           data: {
             linkId: linkId,
             libraryId: libraryId
           }
         }).done(function(message){
-            $item.remove();
-            $('#numLinks').text('Number of Links: ' + message.size)
+            $(this).find('#numLink').text('Number of Links: ' + message.size);
+            debugger
+            dragBox.remove()
             $('#responseMessage').append('<p>').text(message.message).fadeOut(2000)
           });
         }

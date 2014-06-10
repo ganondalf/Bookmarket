@@ -58,12 +58,20 @@ a:focus, a:hover {
   overflow: scroll;
 }
 
-.userLibraries {
+.userLibraries, .publicLibraries {
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
   background-color: #639BF1;
   height: 100%;
+}
+
+.linkBox {
+  background-color: white;
+}
+.libBox {
+  text-align: center;
+  background-color: white;
 }
 
 .recentLinks img{
@@ -112,8 +120,13 @@ a:focus, a:hover {
 }
 
 .userRecentLinks,  p{
-  padding: 10px;
   font-size: 16px;
+  margin-left: 5px;
+}
+.userRecentLinks img{
+  margin-right: 10x;
+  height: 50px;
+  width: 50px;
 }
 
 .userTopLibraries h4, p{

@@ -7,7 +7,6 @@
         <h4>Title: <%= library.title.capitalize %></h4></a>
         <h6>Description: <%= library.description %></h6>
         <p> Number of Links: <%= library.links.size %></p>
-        <div class='responseDiv'></div>
         <% if !current_user %>
           <div class='addLibrary' id='<%= library.id %>'><button>Add!</button></div>
         <% elsif !@user.libraries.include?(library) %>
