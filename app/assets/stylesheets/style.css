@@ -49,13 +49,21 @@ a:focus, a:hover {
   box-shadow: 10px 10px 5px #77BA98;
   border-radius: 10px;
 }
-.squareBox, .userTopLibraries, .publicLibraries, .userRecentLinks {
+.linkBox, .libBox, .userRecentLinks {
   border: 1px solid black;
   border-radius: 10px;
   height: 250px;
   padding: 10px;
   background-color: #639BF1;
   overflow: scroll;
+}
+
+.userLibraries {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #639BF1;
+  height: 100%;
 }
 
 .recentLinks img{
@@ -65,10 +73,10 @@ a:focus, a:hover {
 
 .linkNotes {
   text-align: center;
-  border-top: 1px solid black;
 }
 
 .linkNotes p{
+  border-top: 1px solid black;
   font-size: 14px;
   text-align: left;
   padding: 0 3px 0 0 ;

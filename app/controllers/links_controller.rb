@@ -6,12 +6,14 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.new({
-      title: params[:title],
-      url: params[:url],
-      })
+    @link = Link.new(link_params)
+    @note = Note.new(body: params[:note][:body])
     if @link.save
-      render json: { message: "success" }
+      @note.user = current_user
+      @link.notes << @note
+      @link.picture = 'https://cdn2.iconfinder.com/data/icons/pittogrammi/142/95-512.png'
+
+      redirect_to '/'
     else
       render json: { message: "error" }
     end
@@ -49,7 +51,7 @@ class LinksController < ApplicationController
   end
 
   def link_params
-    params.require(:link).permit(:url, :title, :user_id)
+    params.require(:link).permit(:url, :title, {:note => [:body]})
   end
 
 end

@@ -1,6 +1,6 @@
 class LibrariesController < ApplicationController
 
-  def update
+  def update_link
     library = Library.find(params[:libraryId])
     link = Link.find(params[:linkId])
     if library.links.include?(link)
@@ -9,7 +9,17 @@ class LibrariesController < ApplicationController
       library.links << link
       render json: { message: "Link has been successfully added!"}
     end
+  end
 
+  def update_user
+    if !current_user
+      render json: { message: "Please log in or create an account."}
+    else
+      user = User.find(current_user.id)
+      library = Library.find(params[:libraryId])
+      user.libraries << library
+      render json: { message: "This has been added to Your Libraries."}
+    end
   end
 
 

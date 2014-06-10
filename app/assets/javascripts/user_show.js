@@ -2,24 +2,18 @@ $(document).ready(function(){
 
     $('.userRecentLinks').draggable({
       revert: "invalid",
-      containment: "document"
+      zIndex:10000,
     });
 
     $('.userTopLibraries').droppable({
       accept: ".userRecentLinks",
-      activeClass: "custom-state-active",
       drop: function( event, ui ) {
-        deleteLinkImage( ui.draggable );
-      }
-    });
+        var libraryId = $( this ).attr('id')
+        var linkId =  ui.draggable.attr('id')
 
-    function deleteLinkImage( $item ){
-      var linkId = $item.attr('id');
-      var libraryId = $(event.target).attr('id')
-      console.log($(event.target))
         $.ajax({
           type: 'PUT',
-          url: '/libraries/' + libraryId,
+          url: '/libraries/' + libraryId + '/link',
           dataType: 'JSON',
           data: {
             linkId: linkId,
@@ -31,4 +25,5 @@ $(document).ready(function(){
           });
         }
 
-})
+    })
+});

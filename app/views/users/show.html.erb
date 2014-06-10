@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-        <div class='col-md-3'>
+        <div class='col-md-2'>
           <div class='row '>
             <div class='col-md-12 profileSection'>
               <h4>Hello, <%= @user.first_name %>!</h4>
@@ -13,6 +13,7 @@
                 <div class='row'>
                   <h5>Recently Added Links</h5>
                   <% @user.links.order("created_at DESC").each do |link| %>
+                    <% if !link.library %>
                   <div class='col-md-12 userRecentLinks' id='<%= link.id %>'>
                     <div class='row'>
                       <div class='col-md-3'>
@@ -23,6 +24,7 @@
                         </div>
                       </div>
                   </div>
+                    <% end %>
                   <% end %>
               </div>
             </div>
@@ -30,12 +32,26 @@
         </div>
 
 
-      <div class='col-md-8 col-md-offset-1 longSection'>
+      <div class='col-md-9 col-md-offset-1 longSection userLibraries'>
+        <div id='quickAdd'>
+          <h3>Quick Add Links</h3>
+          <%= form_for(@link,  url: links_path) do |f| %>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+          <%= f.label :url %>
+          <%= f.text_field :url %>
+            <%= fields_for @note do |n| %>
+            <%= n.label :body %>
+            <%= n.text_field :body %>
+            <% end %>
+          <%= f.submit %>
+          <% end %>
+        </div>
         <h3>My Top Libraries</h3>
         <div class='row'>
           <% @user.libraries.each do |library| %>
-            <div class='col-md-4 squareBox' id='<%= library.id %>'>
-              <a href="users/<%= @user.id %>/libraries/<%= library.id %>">
+            <div class='col-md-4 libBox userTopLibraries' id='<%= library.id %>'>
+              <a href="/users/<%= @user.id %>/libraries/<%= library.id %>">
               <h4><%= library.title %></h4>
               <p>"<%= library.description %>"</p>
               <p>Number of Links: <%= library.links.size %></p></a>

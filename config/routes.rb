@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   resources :users do
       resources :libraries, except: [:update]
   end
-  put '/libraries/:id' => 'libraries#update'
+  put '/libraries/:id/link' => 'libraries#update_link'
+  put '/libraries/:id' => 'libraries#update_user'
   resources :links
 
   get '/public_libraries' => 'libraries#show_public_libraries'
   get '/about' => 'welcome#show'
   post '/importlinks' => 'links#create_remotely'
+
   get '/bookmarklets/:id' =>'links#userbookmark'
 
   # Example of regular route:
