@@ -1,33 +1,41 @@
 body {
   font-family: Trebuchet MS, Helvetica, sans-serif;
   color: black;
-  background-color: #3B5998;
+  background-color: #CFF8FF;
+}
+
+.container h2 {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #505859;
 }
 
 a:focus, a:hover {
   text-decoration: none;
-  color: black;
+  color: #505859;
 }
-
 .navbar {
-  background-color: #FFD500;
-
+  background-color: #88C7FF;
+  border-bottom: 4px solid #E3FFB0;
+}
+.navbar-nav {
+  padding-left: 350px;
 }
 .navbar-default .navbar-brand {
-  color: black;
-  font-size: 30px;
+  color: #505859;
+  font-size: 35px;
 }
 .navbar-default .navbar-nav>li>a {
   font-size: 16px;
-  color: black;
+  color: #505859;
 }
 
-.navbar-default .navbar-nav>li {
+.navbar-default .navbar-nav> ul  {
+ padding-left: 40px;
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
@@ -46,9 +54,10 @@ a:focus, a:hover {
 .longSection {
   height: 250px;
   overflow: scroll;
-  box-shadow: 10px 10px 5px #77BA98;
+  box-shadow: 5px 5px 5px #E3FFB0;
   border-radius: 10px;
 }
+
 .linkBox, .libBox, .userRecentLinks {
   border: 1px solid black;
   border-radius: 10px;
@@ -58,22 +67,46 @@ a:focus, a:hover {
   overflow: scroll;
 }
 
-.userLibraries, .publicLibraries {
+.userLibraries {
   border: 1px solid black;
+  box-shadow: none;
+  background-color: #88C7FF;
   border-radius: 10px;
   padding: 10px;
-  background-color: #639BF1;
   height: 100%;
+}
+
+.publicLibraries {
+  box-shadow: none;
+  border-radius: 10px;
+  padding: 10px;
+  height: 100%;
+}
+
+.publicLibraries h1 {
+  font-family:'Oswald', sans-serif;
+  text-align: center;
 }
 
 .linkBox {
   background-color: white;
 }
 .libBox {
+  padding-top: 50px;
+  font-family: Lato, sans-serif;
+  color: black;
   text-align: center;
   background-color: white;
 }
 
+.libBox h4{
+  font-size: 28px;
+  padding: 3px;
+  color:black;
+  border: 2px solid;
+
+  display: inline-block;
+}
 .recentLinks img{
   margin-top: 10px;
   margin-bottom: 15px;
@@ -92,6 +125,7 @@ a:focus, a:hover {
 
 .popularLibraries {
   margin: 0 auto;
+  box-shadow: none;
 }
 
 .profileSection img {
@@ -109,6 +143,7 @@ a:focus, a:hover {
   text-decoration: none;
   font-size: 16px;
   color: black;
+  padding: 0;
 }
 
 .profileSection .userRecentLinks img {
@@ -118,6 +153,10 @@ a:focus, a:hover {
 
 .userRecentLinks {
   height: auto;
+}
+
+.userRecentLinksSection{
+  background-color: #88C7FF;
 }
 
 .userRecentLinks,  p{
@@ -130,7 +169,8 @@ a:focus, a:hover {
   width: 50px;
 }
 
-.userLibraries h3 {
+.userLibraries h3{
+  font-family: 'Oswald', sans-serif;
   text-align: center;
 }
 

@@ -10,7 +10,7 @@
                   <li><%= link_to "My Libraries", user_libraries_path(@user) %></li>
                   <li><%= link_to "Edit Account", edit_user_path(@user) %></li>
                 </ul>
-                <div class='row'>
+                <div class='row recentLinksSection'>
                   <h5>Recently Added Links</h5>
                   <% @user.links.order("created_at DESC").each do |link| %>
                     <% if !link.library %>
@@ -32,7 +32,7 @@
         </div>
 
 
-      <div class='col-md-9 col-md-offset-1 longSection userLibraries'>
+      <div class='col-md-9 col-md-offset-1 quickAdd'>
           <h3>Quick Add Links</h3>
         <div class='row'>
           <div class="col-md-5 col-md-offset-1">
@@ -61,7 +61,7 @@
           </div>
         </div>
         <h3>My Top Libraries</h3>
-        <div class='row'>
+        <div class='row longSection userLibraries'>
           <% @user.libraries.each do |library| %>
             <div class='col-md-4 libBox userTopLibraries' id='<%= library.id %>'>
               <a href="/users/<%= @user.id %>/libraries/<%= library.id %>">

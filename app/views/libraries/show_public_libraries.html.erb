@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <h1>All Libraries</h1>
     <div class="row publicLibraries longSection">
+      <h1>All Libraries</h1>
       <% @libraries.each do |library| %>
         <div class='col-md-3 libBox'>
             <div class='row'>
               <a href='/libraries/<%= library.id %>'>
               <div class='col-md-12'>
-                <h4><%= library.title.capitalize %>
+                <h4><strong><%= library.title.capitalize %></strong></h4>
                 <p>"<%= library.description %>"</p>
                 <p> Number of Links: <%= library.links.size %></p>
               </div></a>
