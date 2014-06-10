@@ -21,6 +21,7 @@ $(document).ready(function(){
           }
         }).done(function(message){
             $item.remove();
+            $('#numLinks').text('Number of Links: ' + message.size)
             $('#responseMessage').append('<p>').text(message.message).fadeOut(2000)
           });
         }

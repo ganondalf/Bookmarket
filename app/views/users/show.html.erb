@@ -54,7 +54,7 @@
               <a href="/users/<%= @user.id %>/libraries/<%= library.id %>">
               <h4><%= library.title %></h4>
               <p>"<%= library.description %>"</p>
-              <p>Number of Links: <%= library.links.size %></p></a>
+              <p id='numLink'>Number of Links: <%= library.links.size %></p></a>
               <div id='responseMessage'></div>
             </div>
           <% end %>

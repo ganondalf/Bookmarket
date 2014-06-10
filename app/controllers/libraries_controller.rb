@@ -7,7 +7,8 @@ class LibrariesController < ApplicationController
       render json: { message: "This library already contains this link."}
     else
       library.links << link
-      render json: { message: "Link has been successfully added!"}
+      num_links = library.links.size
+      render json: { message: "Link has been successfully added!", size: num_links}
     end
   end
 
