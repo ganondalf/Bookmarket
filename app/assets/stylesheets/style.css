@@ -159,9 +159,9 @@ a:focus, a:hover {
   background-color: #88C7FF;
 }
 
-.userRecentLinks,  p{
+.userRecentLinks p{
   font-size: 16px;
-  margin-left: 5px;
+  margin-left: 20px;
 }
 .userRecentLinks img{
   margin-right: 10x;

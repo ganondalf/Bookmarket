@@ -7,12 +7,11 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-    @note = Note.new(body: params[:note][:body])
+    @note = Note.create(body: params[:note][:body])
+    @link.picture = 'https://cdn2.iconfinder.com/data/icons/pittogrammi/142/95-512.png'
+    @note.user = current_user
     if @link.save
-      @note.user = current_user
       @link.notes << @note
-      @link.picture = 'https://cdn2.iconfinder.com/data/icons/pittogrammi/142/95-512.png'
-
       redirect_to '/'
     else
       render json: { message: "error" }

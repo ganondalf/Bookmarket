@@ -22,9 +22,10 @@ $(document).ready(function(){
           }
         }).done(function(message){
             $(this).find('#numLink').text('Number of Links: ' + message.size);
-            debugger
             dragBox.remove()
-            $('#responseMessage').append('<p>').text(message.message).fadeOut(2000)
+            var response = $('<p>').text(message.message)
+            $(this).append(response)
+            response.fadeOut(2000)
           });
         }
 
